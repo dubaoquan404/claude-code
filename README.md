@@ -46,6 +46,20 @@ bun install
 ### 运行
 
 ```bash
+
+pip install litellm 'litellm[proxy]'
+
+litellm --model mistral/mistral-large-latest --port 4000
+
+cat ~/.claude/settings.json
+{
+  "env": {
+	"ANTHROPIC_BASE_URL": "http://localhost:4000",
+	"ANTHROPIC_AUTH_TOKEN": "api-key",
+	"ANTHROPIC_MODEL": "mistral-large-latest"
+  }
+}
+
 # 开发模式, 看到版本号 888 说明就是对了
 bun run dev
 
